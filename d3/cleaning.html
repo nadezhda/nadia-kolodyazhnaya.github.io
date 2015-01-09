@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Home Page: Data Cleaning and Visualization</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<style type="text/css">
+			.container table
+			{
+				margin-bottom: 1.5em;
+				border-collapse: collapse;
+				text-align: left;
+				font-size: 15px;
+				color: #151515;
+			}
+
+			.container table th
+			{
+				font-weight: bold;
+				padding: 0.5em;
+			}
+
+			.container table td
+			{
+				padding: 0.5em;
+				border-right: solid 1px #fff;
+			}
+
+			.container table tr.rowH
+			{
+				color: #fff;
+				background: #41484C top left repeat-x;
+				border-right: solid 1px #fff;
+			}
+
+			.container table tr.rowA
+			{
+				background: #F8F8F8 url('images/a6.gif') top left repeat-x;
+				border-top: solid 1px #fff;
+				color: inherit;
+			}
+
+			.container table tr.rowB
+			{
+				background: #FDFDFD url('images/a7.gif') top left repeat-x;
+				border-top: solid 1px #fff;
+				color: inherit;
+			}
+		</style>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-panels-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">IT Dashboard</h1>
+							<span class="byline">Data Visualization</span>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+	
+							<ul>
+								<li><a href="index.html"> <span class="fa fa-home">Home</span></a></li>
+								<li><a href="journal.html"><span class="fa fa-bar-chart-o">First Visualization</span></a></li>
+								<li><a href="barChart.html"><span class="fa fa-bar-chart-o">Second Visualization</span></a></li>
+								<li><a href="#" class="activeLink"><span class="fa fa-pencil">Data Cleaning</span></a></li>
+								<!-- <li><a href="about.html"><span class="fa fa-cogs">About Project</span></a></li> -->
+							
+							</ul>
+						</nav>
+						
+				</div>
+	
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+			
+				<!-- Intro -->
+					<section id="top" class="one">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>Cleaning the Dataset</strong></h2>
+							</header>
+							
+							<table>
+								<tr class="rowH">
+									<th class="auto-style1">#</th>
+									<th class="auto-style2">Problem</th>
+									<th>Solution</th>
+								</tr>
+								<tr class="rowA">
+									<td class="auto-style1">1</td>
+									<td class="auto-style2"><span lang="EN-US">Data offset</span></td>
+									<td><span lang="EN-US">The chuck of data for "Department of Commerce" was shifted to the left using MS Excel tools</span></td>
+								</tr>
+								<tr class="rowB">
+									<td class="auto-style1">2</td>
+									<td class="auto-style2"><span lang="EN-US">Multiple Representation</span></td>
+									<td><span lang="EN-US">1. Using &quot;Trim leading and trailing whitespace&quot; tool in Google Refine, extra whitespaces were deleted from the strings<br /> 2. Using &quot;Cluster and Edit...&quot; and &quot;Text Facet&quot; instruments, an inconsistency of &quot;Agency Name&quot; column was fixed. Some values were changed manually since it was appeared for several departments, for instance &quot;The Department&quot; (&quot;Department of the Interior&quot; or &quot;Department of Treasury&quot;) and &quot;DoE&quot; (&quot;Department of Education&quot; or &quot;Department of Energy&quot;). The right decision was based on &quot;Agency Code&quot; column <br />3. The similar type of mistake was found and fixed for &quot;Agency Code&quot; of &quot;Department of Agriculture&quot;</span></td>
+								</tr>
+								<tr class="rowA">
+									<td class="auto-style1">3</td>
+									<td class="auto-style2"><span>Data type inconsistency</span></td>
+									<td><span lang="EN">Some numeric data columns contained string representation of numbers (i.e. 1,944), which led difficulty to convert strings to numeric format. Using &quot;Transform…&quot; and GREL expression in Google Refine (<strong>toNumber(value.replace(/\p{Punct}/,&quot; &quot;))</strong>), commas were deleted and strings were converted to the numeric format.</span></td>
+								</tr>
+								<tr class="rowB">
+									<td class="auto-style1">4</td>
+									<td class="auto-style2"><span>Duplicate Record Detection</span></td>
+									<td><span lang="EN">The error was detected based on &quot;ProjectID&quot; column which supposed to contain unique numbers. In Google Refine several duplicated rows were detected Using &quot;Cluster and Edit…&quot; tools (key collision --> ngram-fringerprint). All duplicated rows were stared, selected (&quot;Facet by Star --> True&quot;) and deleted (&quot;Remove all matching rows&quot;).</span></td>
+								</tr>
+			                    <tr class="rowA">
+									<td class="auto-style1">5</td>
+									<td class="auto-style2"><span lang="EN-US">Summation Records and Empty Strings</span></td>
+									<td><span lang="EN-US">43 rows were detected and deleted using text/numeric facet, star highlighting and removing option (&quot;Remove all matching rows&quot;).</span></td>
+								</tr>
+								<tr class="rowB">
+									<td class="auto-style1">6</td>
+									<td class="auto-style2"><span lang="EN-US">Data splitting</span></td>
+									<td><span lang="EN">Some data splitting was detected in &quot;Agency Project ID&quot; column. Values were divided for 2 columns (&quot;Agency Project ID&quot; and &quot;Project Name&quot;). The following changes were made using Google Refine and MS Excel:<br />Using &quot;Transform…&quot; and GREL expression values were merged to one cell: <strong>cells["Agency Project ID"].value + cells["Project Name"].value </strong> <br />Then rest of the columns were shifted to the left using MS Excel filters and shifting the cells to the left. <br />Column 24 were deleted since there were no data after previous steps</span></td>
+								</tr>
+			                    <tr class="rowA">
+									<td class="auto-style1">7</td>
+									<td class="auto-style2"><span lang="EN-US">Mixed use of numeric scales</span></td>
+									<td><span lang="EN">Using Numeric facet in Google Refine, some non-numeric fields were detected in the column &quot;Lifecycle cost&quot;. The fields contained strings such as ($m). The non-numeric part was removed by applying GREL expression:<strong> value.replace(&quot;($m)&quot;,&quot; &quot;)</strong> and transform to numeric format. <br /> Applying numeric facet and distribution in logarithmic scale for &quot;Lifecycle cost&quot; column, some error was discovered (). Compare Lifecycle cost values and Planned cost values the problem was fixed (for example, by changing the floating point: <strong>row 27 : 119098.812 --> 119.098812 </strong>)</span></td>
+								</tr>
+							</table>
+
+						</div>
+					</section>
+					
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<div class="copyright">
+						<p>&copy; 2013 N. Kolodayzhnaya. All rights reserved.</p>
+						<ul class="menu">
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				
+			</div>
+
+	</body>
+</html>

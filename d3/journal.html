@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>First Visualization: Data Cleaning and Visualization</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" href="css/styleChart.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<style type="text/css">
+			.container p{
+				text-align: left;
+			}
+
+			.axis path,
+			.axis line {
+				fill: none;
+				stroke:#b6b6b6;
+				shape-rendering: crispEdges;
+			}
+			g.journal.active{
+				cursor:pointer;
+			}
+			text.label{
+				font-size:12px;
+				font-weight:bold;
+				cursor:pointer;
+			}
+			text.value{
+				font-size:12px;
+				font-weight:bold;
+			}
+
+			div#graph{
+				font-family: Arial, sans-serif;
+				font-size:10px;
+
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-panels-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">IT Dashboard</h1>
+							<span class="byline">Data Visualization</span>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+	
+							<ul>
+								<li><a href="index.html"> <span class="fa fa-home">Home</span></a></li>
+								<li><a href="#" class="activeLink"><span class="fa fa-bar-chart-o">First Visualization</span></a></li>
+								<li><a href="barChart.html"><span class="fa fa-bar-chart-o">Second Visualization</span></a></li>
+								<li><a href="cleaning.html"><span class="fa fa-pencil">Data Cleaning</span></a></li>
+								<!-- <li><a href="about.html"><span class="fa fa-cogs">About Project</span></a></li> -->
+							
+							</ul>
+						</nav>
+						
+				</div>
+	
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+			
+				<!-- Intro -->
+					<section id="top" class="one">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>First Visualization</strong></h2>
+							</header>
+							
+							<div id="graph"></div>
+							<p>The original idea for data representation was taken from <a href="http://neuralengr.com/asifr/journals/">Journals</a>.</p>
+							<p>The graph illustrates number of projects which have been taken to accomplish by each agency during 20-year period. The number of projects is emphasized by size of the bubbles. </p>
+							<p>The color scheme of the bubbles demonstrates demonstrates number of projects per year over or under the budget for particular agency ( Project Level Cost variance rating).</p>
+						</div>
+					</section>
+					
+			</div>
+
+			<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<div class="copyright">
+						<p>&copy; 2014 N. Kolodayzhnaya. All rights reserved.</p>
+						<ul class="menu">
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				
+			</div>
+			<script type="text/javascript">
+
+			var margin = {top: 20, right: 200, bottom: 0, left: 20},
+				width = 600,
+				height = 650;
+			
+			var start_year = 1997,
+				end_year = 2015;
+
+			// Bubbles color
+			var c = d3.scale.ordinal()
+				.domain([0,1,2])
+				.range(["#1B9E4F","#FFFF00","#FF0000"]); // color range (green & red)
+
+			// Text color
+			var cText = d3.scale.category20b();
+
+			var x = d3.scale.linear()
+				.range([0, width]);
+			
+			var xAxis = d3.svg.axis()
+				.scale(x)
+				.orient("top");
+			
+			var formatYears = d3.format("0000");
+			xAxis.tickFormat(formatYears);
+
+			// Canvas
+			var svg = d3.select("#graph").append("svg")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.style("margin-left", margin.left + "px")
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			// Extract data from csv file
+			d3.csv("data/ProjectsAmount.csv", function(data) {
+//				console.log(data)
+				x.domain([start_year, end_year]);
+				
+				// Scalability of X demension
+				var xScale = d3.scale.linear()
+					.domain([start_year, end_year])
+					.range([0, width]);
+
+
+				// Draw X axis
+				svg.append("g")
+					.attr("class", "x axis")
+					.attr("transform", "translate(0," + 0 + ")")
+					.call(xAxis);
+
+				var agencyName = data[0].agency,
+					dataset = [];
+					projects = [];
+				
+				// Rearrange tha data
+				for (j = 0; j < data.length; j++){
+					var project = parseInt(data[j].projects),
+						year = new Date(data[j].year).getFullYear(),
+						//year = d.getFullYear(),
+						color = parseInt(data[j].status)
+
+					if (data[j].agency == agencyName){
+						projects.push([year,project,color]);
+					}
+					else{
+						dataset.push({
+							agency: agencyName,
+							project: projects,
+						})
+						agencyName = data[j].agency;
+						projects = [year,project,color];
+
+					}
+
+					if (j == data.length - 1){
+						dataset.push({
+							agency: agencyName,
+							project: projects,
+						})
+					}
+				}
+
+
+				for (var j = 0; j < dataset.length; j++) {
+					// var cText = d3.scale.ordinal()
+					//     .domain(dataset[j]['agency'],function(d){return d;})
+					//     .range(colorbrewer.Set3[12]);
+
+					var g = svg.append("g").attr("class","journal");
+
+					var circles = g.selectAll("circle")
+						.data(dataset[j]['project'])
+						.enter()
+						.append("circle");
+
+
+					var text = g.selectAll("text")
+						.data(dataset[j]['project'])
+						.enter()
+						.append("text");
+
+					var rScale = d3.scale.linear()
+						.domain([0, d3.max(dataset[j]['project'], function(d) { return d[1]; })])
+						.range([4, 10]);
+
+					circles
+						.attr("cx", function(d, i) { return xScale(d[0]); })
+						.attr("cy", j*20+20)
+						.attr("r", function(d) { return rScale(d[1]); })
+						.style("fill", function(d) { return c(d[2]); })
+						.on("mouseover", mouseover)
+						.on("mouseout", mouseout);
+
+					text
+						.attr("y", j*20+25)
+						.attr("x",function(d, i) { return xScale(d[0]); })
+						.attr("class","value")
+						.text(function(d){ return d[1]; })
+						.style("fill", function(d) { return c(d[2]); })
+						.style("display","none");
+
+					g.append("text")
+						.attr("y", j*20+25)
+						.attr("x",width+20)
+						.attr("class","label")
+						.text(truncate(dataset[j]['agency'],30,"..."))
+						.style("fill", function(d) { return cText(j); })
+						//.style("fill", "#666666")
+						.on("mouseover", mouseover)
+						.on("mouseout", mouseout);
+				};
+				
+				// Legend
+				//------------------------------------
+				// Add caption for legend
+				var caption = svg.selectAll(".caption")
+					.data(["Project Level Cost Variance Rating:"])
+						.enter().append("g")
+				  .attr("class", "caption")
+				  .attr("transform", "translate(0,"+ height - 150 +")");
+
+				caption.append("text")
+				  .attr("x", 150)
+				  .attr("y", height - 210)
+				  .attr("dy", ".35em")
+				  .style("text-anchor", "end")
+				  .text(function(d) { return d;});
+
+				// Add legend of the grapth
+				var legend = svg.selectAll(".legend")
+				  .data(["≥ 30% ","≥ 10% and < 30% ","< 10%"])
+				.enter().append("g")
+				  .attr("class", "legend")
+				  .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+				legend.append("rect")
+				  .attr("x", 85)
+				  .attr("y", height - 200)
+				  .attr("width", 18)
+				  .attr("height", 18)
+				  .style("fill", c);
+
+				legend.append("text")
+				  .attr("x", 80)
+				  .attr("y", height - 191)
+				  .attr("dy", ".35em")
+				  .style("text-anchor", "end")
+				  .text(function(d) { return d; });
+
+
+			});
+			// Truncate string function
+			function truncate(str, maxLength, suffix) {
+				/*Trancate the string if it is bigger than maxLength
+				* and add pointer (i.e "...") at the end 
+				*/
+				if(str.length > maxLength) { 
+					str = str.substring(0, maxLength + 1); 
+					str = str.substring(0, Math.min(str.length, str.lastIndexOf(" ")));
+					str = str + suffix;
+				}
+				return str;
+			}
+
+			// Mouseover event handler
+			function mouseover(p) {
+				var g = d3.select(this).node().parentNode;
+				d3.select(g).selectAll("circle").style("display","none");
+				d3.select(g).selectAll("text.value").style("display","block");
+			}
+			
+			// Mouseout event handler
+			function mouseout(p) {
+				var g = d3.select(this).node().parentNode;
+				d3.select(g).selectAll("circle").style("display","block");
+				d3.select(g).selectAll("text.value").style("display","none");
+			}
+
+
+
+
+		</script>
+
+	</body>
+</html>

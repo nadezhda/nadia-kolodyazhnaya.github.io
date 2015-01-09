@@ -1,0 +1,284 @@
+/* Basic */
+
+*{
+	margin: 0em;
+	padding: 0em;
+}
+
+body {
+	font-size: 13px;
+	color: #151515;
+	background-color: #fff;
+}
+
+body,th, td, input, textarea, select, option {
+	font-family: "Trebuchet MS", "Times New Roman", Arial, Times, serif;
+}
+
+
+h1,h2,h3 {
+   	font-weight: normal;
+}
+
+h1 {
+	letter-spacing: -1px;
+	font-size: 3em;
+}
+
+h2 {
+	letter-spacing: -1px;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+p, ul, ol {
+	line-height: 200%;
+}
+
+a
+{
+	color: #004E80;
+	text-decoration: underline;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+a:focus{
+	background-color: #ffe956;
+}
+
+/* Outer */
+
+#outer
+{
+	padding: 0em;
+	margin: 0em;
+	width: 100%;
+}
+
+/* Header */
+
+#header
+{
+	position: relative;
+	background: #004778 url('images/a5.gif') bottom left repeat-x;
+	height: 10em;
+	padding-left: 2em;
+}
+
+#header h1
+{
+	position: absolute;
+	top: 1.0em;
+    left:5.5em;
+	font-size: 2.2em;
+   	color: #fff;
+	letter-spacing: -0.05em;
+}
+
+#header img {
+    float:left;
+	padding-top: 1.0em;
+}
+
+/* Menu */
+
+#menu
+{
+	position: absolute;
+	top: 6.7em;
+	right: 3em;
+    font-size: 14px;
+}
+
+#menu ul
+{
+	list-style: none;
+}
+
+#menu li
+{
+	display: inline;
+	padding-left: 1.1em;
+	margin-left: 1em;
+	border-left: dotted 1px #E0E8EF;
+}
+
+#menu li.first
+{
+	border: 0em;
+	margin-left: 0em;
+	padding-left: 0em;
+}
+
+#menu li a
+{
+	color: #fff;
+	padding: 0.1em;
+	text-decoration: none;
+}
+
+#menu li a:hover
+{
+	text-decoration: underline;
+}
+
+#menu li a:focus{
+    color:#000;
+}
+
+/* Content */
+
+#content
+{
+/*	line-height: 1.5em;*/
+}
+
+#content p
+{
+	margin-bottom: 1.5em;
+}
+
+#content h2,h3,h4,h5,h6
+{
+	color: #545454;
+	margin-bottom: 1em;
+	border-bottom: dashed 1px #dfdfdf;
+	padding-bottom: 0.3em;
+}
+
+#content h2
+{
+	font-size: 1.8em;
+}
+
+#content h3
+{
+	font-size: 1.3em;
+}
+
+#content ul
+{
+	margin-bottom: 1.5em;
+	padding-left: 1em;
+	list-style: square;
+}
+
+#content blockquote
+{
+	margin-bottom: 1.5em;
+	padding: 0.75em 0.75em 0.75em 1.5em;
+	border-left: solid 0.75em #005082;
+	background: #FDFDFD url('images/a7.gif') top left repeat-x;
+}
+
+#content blockquote p
+{
+	margin-bottom: 0em;
+}
+
+#content table
+{
+	margin-bottom: 1.5em;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+#content table th
+{
+	font-weight: bold;
+	padding: 0.5em;
+}
+
+#content table td
+{
+	padding: 0.5em;
+	border-right: solid 1px #fff;
+}
+
+#content table tr.rowH
+{
+	color: #fff;
+	background: #006192 url('images/a8.gif') top left repeat-x;
+	border-right: solid 1px #fff;
+}
+
+#content table tr.rowA
+{
+	background: #F8F8F8 url('images/a6.gif') top left repeat-x;
+	border-top: solid 1px #fff;
+	color: inherit;
+}
+
+#content table tr.rowB
+{
+	background: #FDFDFD url('images/a7.gif') top left repeat-x;
+	border-top: solid 1px #fff;
+	color: inherit;
+}
+
+/* Primary Content */
+
+#primaryContentContainer
+{
+	background-color: #fff;
+	float: right;
+	margin-left: -19em;
+	width: 100%;
+}
+
+#primaryContent
+{
+	margin: 1.5em 3em 0em 17.25em;
+	padding: 1.5em 3em 1.5em 3em;
+}
+
+/* Secondary Content */
+
+#secondaryContent
+{
+	position: relative;
+	float: left;
+	width: 14em;
+	padding: 3em 2em 1.5em 2em;
+	background: #fff url('images/a1.gif') top right repeat-y;
+}
+
+#secondaryContent .xbg
+{
+	position: absolute;
+	right: 0em;
+	bottom: -64px;
+	background: #fff url('images/a3.gif') top right no-repeat;
+	height: 64px;
+	width: 128px;
+}
+
+#secondaryContent img {
+    padding-top:2.0em;
+}
+
+/* Footer */
+
+#footer
+{
+	position: relative;
+	z-index: 1;
+	border-top: dashed 1px #dfdfdf;
+    background-color:#005386;
+    color:#fff;
+	padding: 1em 0em 2em 0em;
+	margin: 1em 2em 0em 2em;
+	text-align: center;
+}
+
+.clear
+{
+	clear: both;
+
+}

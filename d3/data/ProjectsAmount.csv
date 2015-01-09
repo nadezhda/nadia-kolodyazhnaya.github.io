@@ -1,0 +1,368 @@
+agency,year,projects,status
+Department of Agriculture,2002,5,0.2
+Department of Agriculture,2004,1,0
+Department of Agriculture,2005,1,0
+Department of Agriculture,2007,2,0
+Department of Agriculture,2012,47,0.23404255319148937
+Department of Agriculture,2006,1,0
+Department of Agriculture,2015,1,0
+Department of Agriculture,2014,32,0.0625
+Department of Agriculture,2009,2,0
+Department of Agriculture,2010,6,0
+Department of Agriculture,2011,7,0.2857142857142857
+Department of Agriculture,2013,43,0.20930232558139536
+Department of Commerce,2007,1,0
+Department of Commerce,2008,3,0.6666666666666666
+Department of Commerce,2010,18,0.5555555555555556
+Department of Commerce,2005,2,0
+Department of Commerce,2011,51,0.6862745098039216
+Department of Commerce,2009,4,0.5
+Department of Commerce,2012,118,1.0405405405405406
+Department of Commerce,2014,65,0.15384615384615385
+Department of Commerce,2006,2,1.5
+Department of Commerce,2013,104,0.34615384615384615
+Department of Commerce,2015,4,0
+Department of Defense,2003,2,0
+Department of Defense,2004,3,0.6666666666666666
+Department of Defense,2013,59,0.3728813559322034
+Department of Defense,2009,14,0.21428571428571427
+Department of Defense,2014,46,0.6304347826086957
+Department of Defense,2001,2,0
+Department of Defense,2007,5,0
+Department of Defense,2015,3,0.6666666666666666
+Department of Defense,2000,3,0
+Department of Defense,2010,23,0.34782608695652173
+Department of Defense,2008,11,0.09090909090909091
+Department of Defense,2002,2,0
+Department of Defense,2006,3,0
+Department of Defense,2011,38,0.23684210526315788
+Department of Defense,2005,5,0.4
+Department of Defense,2012,71,0.2676056338028169
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2012,34,1
+Department of Education,2014,20,2
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2012,34,2
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2011,4,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2013,49,1
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2007,1,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2013,49,1
+Department of Education,2014,20,2
+Department of Education,2014,20,0
+Department of Education,2012,34,0
+Department of Education,2009,2,0
+Department of Education,2009,2,0
+Department of Education,2010,1,2
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2012,34,2
+Department of Education,2013,49,0
+Department of Education,2013,49,1
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,2
+Department of Education,2012,34,1
+Department of Education,2012,34,2
+Department of Education,2013,49,0
+Department of Education,2012,34,1
+Department of Education,2012,34,2
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2014,20,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2014,20,1
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2012,34,1
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2011,4,0
+Department of Education,2011,4,0
+Department of Education,2011,4,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2012,34,0
+Department of Education,2013,49,0
+Department of Education,2014,20,0
+Department of Education,2013,49,0
+Department of Education,2014,20,2
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Education,2013,49,0
+Department of Energy,2011,1,1
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,1
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,1
+Department of Energy,2012,27,1
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2013,19,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2012,27,2
+Department of Energy,2010,1,0
+Department of Energy,2012,27,0
+Department of Energy,2014,10,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,1
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2012,27,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Energy,2013,19,0
+Department of Energy,2013,19,0
+Department of Energy,2014,10,0
+Department of Health and Human Services,2013,66,0.36363636363636365
+Department of Health and Human Services,2014,45,0.06666666666666667
+Department of Health and Human Services,2010,12,0.4166666666666667
+Department of Health and Human Services,2004,3,0
+Department of Health and Human Services,2002,1,0
+Department of Health and Human Services,2007,1,0
+Department of Health and Human Services,2009,8,0.125
+Department of Health and Human Services,2011,53,0.49056603773584906
+Department of Health and Human Services,2005,2,0
+Department of Health and Human Services,2008,2,0.5
+Department of Health and Human Services,2012,105,0.2857142857142857
+Department of Health and Human Services,2015,6,0
+Department of Homeland Security,2010,41,0.2926829268292683
+Department of Homeland Security,2002,1,2
+Department of Homeland Security,2008,14,0.5
+Department of Homeland Security,2004,1,0
+Department of Homeland Security,2013,117,0.3333333333333333
+Department of Homeland Security,2015,7,0
+Department of Homeland Security,2014,73,0.0547945205479452
+Department of Homeland Security,2001,1,0
+Department of Homeland Security,2006,5,0.2
+Department of Homeland Security,2012,113,0.5398230088495575
+Department of Homeland Security,2005,12,0
+Department of Homeland Security,2011,69,0.3188405797101449
+Department of Homeland Security,2009,15,0.5333333333333333
+Department of Homeland Security,2000,1,0
+Department of Homeland Security,2003,1,0
+Department of Housing and Urban Development,2012,5,0.4
+Department of Housing and Urban Development,2010,1,0
+Department of Housing and Urban Development,2011,3,0
+Department of Housing and Urban Development,2013,19,0.21052631578947367
+Department of Housing and Urban Development,2014,12,0
+Department of Housing and Urban Development,2015,1,0
+Department of the Interior,2012,19,0.21052631578947367
+Department of the Interior,2013,10,0.2
+Department of the Interior,2014,4,0.25
+Department of the Interior,2010,5,1.0
+Department of the Interior,2009,1,0
+Department of the Interior,2008,1,1
+Department of the Interior,2011,7,0.5714285714285714
+Department of Justice,2002,1,0
+Department of Justice,2010,5,0
+Department of Justice,2014,11,0
+Department of Justice,2011,4,0.25
+Department of Justice,2012,19,0.5263157894736842
+Department of Justice,2013,23,0.30434782608695654
+Department of Justice,2008,1,0
+Department of Labor,2014,11,0.18181818181818182
+Department of Labor,2008,1,1
+Department of Labor,2009,2,1.5
+Department of Labor,2005,1,0
+Department of Labor,2011,34,0.4411764705882353
+Department of Labor,2010,12,0.5
+Department of Labor,2013,33,0.42424242424242425
+Department of Labor,2012,58,0.6379310344827587
+Department of State,2009,8,0.625
+Department of State,2014,2,1.0
+Department of State,2010,4,1.0
+Department of State,2013,4,0
+Department of State,2008,6,0.3333333333333333
+Department of State,2005,2,0.5
+Department of State,2007,4,0.25
+Department of State,2003,3,0
+Department of State,2006,3,0
+Department of State,2011,69,0.34782608695652173
+Department of State,2012,12,0.5833333333333334
+U.S. Agency for International Development,2013,3,0.6666666666666666
+U.S. Agency for International Development,2011,5,0.2
+U.S. Agency for International Development,2010,1,0
+U.S. Agency for International Development,2012,4,0
+U.S. Agency for International Development,2014,1,0
+Department of Transportation,2005,1,2
+Department of Transportation,2013,41,0.12195121951219512
+Department of Transportation,2010,60,0.5333333333333333
+Department of Transportation,2002,1,0
+Department of Transportation,2015,2,0
+Department of Transportation,2006,3,0.6666666666666666
+Department of Transportation,2007,5,0.2
+Department of Transportation,2008,22,0.2727272727272727
+Department of Transportation,2012,44,0.29545454545454547
+Department of Transportation,2000,1,0
+Department of Transportation,2011,52,0.40384615384615385
+Department of Transportation,2014,30,0.1
+Department of Transportation,2009,9,0
+Department of the Treasury,1998,1,0
+Department of the Treasury,2011,22,0.5909090909090909
+Department of the Treasury,2012,56,0.5714285714285714
+Department of the Treasury,2008,2,1
+Department of the Treasury,2015,1,0
+Department of the Treasury,2014,33,0
+Department of the Treasury,2013,80,0.35
+Department of the Treasury,2009,3,0
+Department of the Treasury,2010,5,0.2
+Department of Veterans Affairs,2009,15,0.9333333333333333
+Department of Veterans Affairs,2008,10,0.4
+Department of Veterans Affairs,2010,51,0.8235294117647058
+Department of Veterans Affairs,2011,53,0.7169811320754716
+Department of Veterans Affairs,2013,39,0.2564102564102564
+Department of Veterans Affairs,2012,61,0.5081967213114754
+Department of Veterans Affairs,2006,1,2
+Department of Veterans Affairs,2007,1,1
+Department of Veterans Affairs,2014,31,0.22580645161290322
+Department of Veterans Affairs,2015,18,0
+U.S. Army Corps of Engineers,2013,6,0.16666666666666666
+U.S. Army Corps of Engineers,1997,1,2
+U.S. Army Corps of Engineers,2007,1,0
+U.S. Army Corps of Engineers,2014,4,0.25
+U.S. Army Corps of Engineers,2015,2,0
+U.S. Army Corps of Engineers,2009,1,0
+U.S. Army Corps of Engineers,2011,5,0
+U.S. Army Corps of Engineers,2012,3,0
+U.S. Army Corps of Engineers,2010,4,1.25
+Environmental Protection Agency,2012,20,0.05
+Environmental Protection Agency,2013,21,0.2857142857142857
+Environmental Protection Agency,2014,13,0
+Environmental Protection Agency,2010,1,1
+Environmental Protection Agency,2008,1,0
+Environmental Protection Agency,2011,3,0.6666666666666666
+General Services Administration,2014,23,0
+General Services Administration,2011,18,0.3888888888888889
+General Services Administration,2010,2,0
+General Services Administration,2007,1,0
+General Services Administration,2013,51,0.058823529411764705
+General Services Administration,2015,1,0
+General Services Administration,2009,1,0
+General Services Administration,2012,47,0.0425531914893617
+National Aeronautics and Space Administration,2011,8,0.125
+National Aeronautics and Space Administration,2012,4,0
+National Archives and Records Administration,2014,7,0.14285714285714285
+National Archives and Records Administration,2013,20,0.05
+National Archives and Records Administration,2011,6,0.3333333333333333
+National Archives and Records Administration,2012,12,0.16666666666666666
+National Science Foundation,2012,13,0
+National Science Foundation,2014,5,0.2
+National Science Foundation,2013,4,0.25
+National Science Foundation,2010,1,0
+Nuclear Regulatory Commission,2014,11,0.09090909090909091
+Nuclear Regulatory Commission,2013,27,0.2962962962962963
+Nuclear Regulatory Commission,2010,1,0
+Nuclear Regulatory Commission,2012,31,0.2903225806451613
+Nuclear Regulatory Commission,2011,6,0.3333333333333333
+Office of Personnel Management,2009,1,1
+Office of Personnel Management,2014,10,0
+Office of Personnel Management,2005,1,0
+Office of Personnel Management,2010,2,0
+Office of Personnel Management,2004,1,0
+Office of Personnel Management,2008,2,0.5
+Office of Personnel Management,2011,8,0.375
+Office of Personnel Management,2012,15,0.4666666666666667
+Office of Personnel Management,2013,18,0
+Small Business Administration,2013,14,0.07142857142857142
+Small Business Administration,2010,6,0.16666666666666666
+Small Business Administration,2014,5,0
+Small Business Administration,2012,5,0
+Small Business Administration,2011,9,0
+Social Security Administration,2011,13,0.23076923076923078
+Social Security Administration,2014,40,0
+Social Security Administration,2012,104,0.5865384615384616
+Social Security Administration,2013,51,0.6078431372549019

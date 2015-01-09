@@ -1,0 +1,15 @@
+﻿* html .u2_mouseOver {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Описание_СМТС_1_files/button_u2_mouseOver.png");
+}
+
+* html .u2_disabled {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Описание_СМТС_1_files/button_u2_disabled.png");
+}
+
+* html .u2_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Описание_СМТС_1_files/button_u2_normal.png");
+}
+

@@ -1,0 +1,404 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Second Visualization: Data Cleaning and Visualization</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/checkList/jquery-1.8.0.min.js"></script>
+		<script src="js/checkList/jquery-ui-1.8.23.custom.min.js"></script>
+		<script src="js/checkList/jquery.ui.checkList.js"></script> 
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" type="text/css" href="js/checkList/ui-lightness/jquery-ui-1.8.23.custom.css" />
+			<link rel="stylesheet" type="text/css" href="js/checkList/checkList.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+
+		<style type="text/css">
+			.container p{
+				text-align: left;
+			}
+			.axis path,
+			.axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			.bar {
+			  fill: steelblue;
+			}
+
+			.x.axis path {
+			  display: none;
+			}
+
+			div#barChart{
+				float: left;
+				text-align: left;
+				font: 10px sans-serif;
+				vertical-align: top;
+				line-height: 1.4em;
+				color: #44525E;
+				margin-top:-550px;
+				width:70%;
+
+			}
+
+			div#checkBoxList{
+				float: right;
+				font: 10px sans-serif;
+			}
+			
+			#checkbox { 
+				border:2px solid #ccc; 
+				width:260px; 
+				height: 450px; 
+				overflow-y: scroll;
+				text-align: left;
+				margin-top:-20px;
+			}
+
+			.txtFilter, #updateButton{
+				font: 10px sans-serif;
+			}
+
+			#updateButton{
+				margin-top: 5px;
+			}
+
+			.toolbar{
+				margin-top:5px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header" class="skel-panels-fixed">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">IT Dashboard</h1>
+							<span class="byline">Data Visualization</span>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+	
+							<ul>
+								<li><a href="index.html"> <span class="fa fa-home">Home</span></a></li>
+								<li><a href="journal.html"><span class="fa fa-bar-chart-o">First Visualization</span></a></li>
+								<li><a href="#" class="activeLink"><span class="fa fa-bar-chart-o">Second Visualization</span></a></li>
+								<li><a href="cleaning.html"><span class="fa fa-pencil">Data Cleaning</span></a></li>
+								<!-- <li><a href="about.html"><span class="fa fa-cogs">About Project</span></a></li> -->
+							
+							</ul>
+						</nav>
+						
+				</div>
+	
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+			
+				<!-- Intro -->
+					<section id="top" class="one">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>Second Visualization</strong></h2>
+							</header>
+								<div id="barChart"></div>
+								<div>
+									<div id="checkBoxList">
+										<div id="checkbox"></div>
+										<input type="button" value="Update" id="updateButton"></input>
+									</div>
+								</div>
+								<p>The original idea for data representation was taken from <a href="http://bl.ocks.org/mbostock/3887051">Grouped Bar Chart</a></p>
+								<p>The bar chart illustrates the amount of expenses per agency during the particular year. The users are able to compare money consumption between different years. Also, it shows the changes in agencies' spending during the 20 years.</p>
+								<p>For interaction the plugin <a href="http://www.codeproject.com/Tips/461138/Checkbox-List-With-Filtering-jQuery-Widget">Checkbox List With Filtering jQuery Widget</a> was implemented </p>
+
+						</div>
+					</section>
+					
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				
+				<!-- Copyright -->
+					<div class="copyright">
+						<p>&copy; 2014 N. Kolodayzhnaya. All rights reserved.</p>
+						<ul class="menu">
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				
+			</div>
+			<script type="text/javascript">
+
+				var margin = {top: 20, right: 20, bottom: 30, left: 40},
+				    width = 700 - margin.left - margin.right,
+				    height = 500 - margin.top - margin.bottom;
+
+				var x0 = d3.scale.ordinal()
+		    		.rangeRoundBands([0, width], .1);
+
+				var x1 = d3.scale.ordinal();
+
+				var y = d3.scale.linear()
+				    .range([height, 0]);
+
+				// var color = d3.scale.category20();
+
+				var color = d3.scale.ordinal()
+		    		.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+		    	var xAxis = d3.svg.axis()
+				    .scale(x0)
+				    .orient("bottom");
+
+				var yAxis = d3.svg.axis()
+				    .scale(y)
+				    .orient("left")
+				    .tickFormat(d3.format(".2s"));
+				
+				var svg = d3.select("#barChart").append("svg")
+				    .attr("width", width + margin.left + margin.right)
+				    .attr("height", height + margin.top + margin.bottom)
+				  	.append("g")
+				    	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+				
+				var checkBoxArray = [{text: "Department of Agriculture", value:"1"}, {text:"Department of Commerce", value:"2"},{text: "Department of Homeland Security", value:"3"}];
+				
+				var refresh = function () {
+					// Onload csv data file
+					d3.csv("data/expenses2.csv", function(error, rawData){
+						// sort the data by 2 fields (agency and year)
+						rawData.sort(sort_by('year', {
+						    name: 'agency',
+						    primer: parseInt,
+						    reverse: false
+						}));
+						
+						data = [];
+						//console.log("intrance into function");
+						//console.log(checkBoxArray);
+
+						for(j = 0; j< checkBoxArray.length; j++){
+							data = data.concat(filter(rawData, {agency: checkBoxArray[j].text}));
+						
+						}
+							// console.log(data.length);
+
+						var agency = data[0].agency, // first agency name in the data file
+							year = data[0].year, // first year in the data file
+							totalCost = 0; // total lifecycle cost ($M)
+						
+						var dataset = [],
+							expenses = [],
+							costPerYear = [];
+
+							// Sum up total expenses per year and per agency
+							for (j = 0; j < data.length; j++){
+
+								var expenses = parseFloat(data[j].expenses),
+								cur_year = new Date(data[j].year).getFullYear();
+								
+								if(cur_year == year){
+									if(data[j].agency == agency){
+										totalCost += expenses;
+									}
+									else{
+										costPerYear.push({agency: data[j-1].agency,value: totalCost});
+										agency = data[j].agency;
+										totalCost = expenses;
+									}
+								}
+								else{
+									costPerYear.push({agency: data[j-1].agency,value: totalCost});
+									dataset.push({
+										agency: data[j-1].agency,
+										year: year,
+										expenses: totalCost,
+										yearCost: costPerYear
+									});
+									year = cur_year;
+									agency = data[j].agency;
+									totalCost = expenses;
+									costPerYear = [];
+								}
+								if(j == data.length - 1){
+									costPerYear.push({agency: data[j].agency,value: totalCost});
+									dataset.push({
+										agency: data[j].agency,
+										year: cur_year,
+										expenses: totalCost,
+										yearCost: costPerYear
+									});
+								}
+
+							}
+							svg.selectAll("g").remove();
+							svg.selectAll(".yearName").remove();
+							svg.selectAll("rect").remove();
+							agencyName = d3.set(data.map(function(d) { return d["agency"]; })).values();
+							//console.log(dataset);
+
+							var xVar =  d3.set(dataset.map(function(d) {return d.year; })).values();
+							//console.log(xVar.sort());
+							x0.domain(xVar.sort());
+							x1.domain(agencyName).rangeRoundBands([0, x0.rangeBand()]);
+							y.domain([0, d3.max(dataset, function(d) { return d3.max(d.yearCost, function(d) { return d.value; }); })]);
+
+							  svg.append("g")
+						      .attr("class", "x axis")
+						      .attr("transform", "translate(0," + height + ")")
+						      .call(xAxis);
+
+						  svg.append("g")
+						      .attr("class", "y axis")
+						      .call(yAxis)
+						    .append("text")
+						      .attr("transform", "rotate(-90)")
+						      .attr("y", 6)
+						      .attr("dy", ".71em")
+						      .style("text-anchor", "end")
+						      .text("Lyfecycle Cost($M)");
+
+						 var yearName = svg.selectAll(".yearName")
+					      .data(dataset)
+					    .enter().append("g")
+					      .attr("class", "g")
+					      .attr("transform", function(d) { return "translate(" + x0(d.year) + ",0)"; });
+
+						  yearName.selectAll("rect")
+						      .data(function(d) { return d.yearCost; })
+						    .enter().append("rect")
+						      .attr("width", x1.rangeBand())
+						      .attr("x", function(d) { return x1(d.agency); })
+						      .attr("y", function(d) { return y(d.value); })
+						      .attr("height", function(d) { return height - y(d.value); })
+						      .style("fill", function(d) { return color(d.agency); });
+						
+						  var legend = svg.selectAll(".legend")
+						      .data(agencyName.slice().reverse())
+						    .enter().append("g")
+						      .attr("class", "legend")
+						      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+						  legend.append("rect")
+						      .attr("x", width - 18)
+						      .attr("width", 18)
+						      .attr("height", 18)
+						      .style("fill", color);
+
+						  legend.append("text")
+						      .attr("x", width - 24)
+						      .attr("y", 9)
+						      .attr("dy", ".35em")
+						      .style("text-anchor", "end")
+						      .text(function(d) { return d; });
+
+					 });
+
+				}
+				refresh();
+
+
+				d3.csv("data/expenses2.csv", function(error, rawData){
+					var agencyName = d3.set(rawData.map(function(d) { return d["agency"]; })).values();
+					var agencyListJson = [];
+					for(j = 0; j < agencyName.length; j++){
+						agencyListJson.push({text:agencyName[j], value:j+1});
+					}
+					
+					// Buld in checkbox List 
+					$('#checkbox').checkList({
+				      listItems: agencyListJson,
+				      onChange: selChange
+					}); 
+				});
+				
+				function selChange(){
+					var selection = $('#checkbox').checkList('getSelection');
+		      		checkBoxArray = selection;
+		      		return checkBoxArray;
+				}
+
+				$("#updateButton").click(function(){
+					console.log(checkBoxArray);
+					if (checkBoxArray.length != 0){
+						refresh(checkBoxArray);
+					}
+
+				});
+
+
+
+				// Multi dimensional sorting function
+				//---------------------------------------
+				var sort_by = function() {
+				   var fields = [].slice.call(arguments),
+				       n_fields = fields.length;
+
+				   return function(A,B) {
+				       var a, b, field, key, primer, reverse, result, i;
+
+				       for(i = 0; i < n_fields; i++) {
+				           result = 0;
+				           field = fields[i];
+
+				           key = typeof field === 'string' ? field : field.name;
+
+				           a = A[key];
+				           b = B[key];
+
+				           if (typeof field.primer  !== 'undefined'){
+				               a = field.primer(a);
+				               b = field.primer(b);
+				           }
+
+				           reverse = (field.reverse) ? -1 : 1;
+
+				           if (a<b) result = reverse * -1;
+				           if (a>b) result = reverse * 1;
+				           if(result !== 0) break;
+				       }
+				       return result;
+				   }
+				};
+
+				// Filtering function
+				//---------------------------------------
+				function filter(arr, criteria) {
+				  return arr.filter(function(obj) {
+				    return Object.keys(criteria).every(function(c) {
+				      return obj[c] == criteria[c];
+				    });
+				  });
+				}
+
+		</script>
+
+	</body>
+</html>
