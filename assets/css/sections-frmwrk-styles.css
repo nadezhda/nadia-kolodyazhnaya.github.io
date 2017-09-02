@@ -8,25 +8,25 @@ for e.g. <body class="Orbitron"> in your template to chose Orbitron font */
 
 GET FONTS HERE
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,900);
 body.roboto{
 	font-family: 'Roboto', sans-serif;
 	font-size:16px;
 }
 
 
-@import url(http://fonts.googleapis.com/css?family=Orbitron:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:400,500,700);
 body.Orbitron{
 	font-family: 'Orbitron', sans-serif;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 body.Open-sans{
 	font-family: 'Open Sans', sans-serif;
 }
 */
 /*
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 */
 /*
 body.montserrat{
@@ -52,7 +52,7 @@ body.montserrat{
 
 @font-face{
 font-family:Open Sans;
-src: url(http://fonts.gstatic.com/s/opensans/v10/IgZJs4-7SA1XX_edsoXWog.ttf);}
+src: url(https://fonts.gstatic.com/s/opensans/v10/IgZJs4-7SA1XX_edsoXWog.ttf);}
 
 
 html body {font-family:Open Sans;}
